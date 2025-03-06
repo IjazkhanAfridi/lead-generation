@@ -19,7 +19,7 @@ export default function Home() {
 
   const fetchLeads = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/leads');
+      const response = await axios.get('https://lead-generation-l6xs.onrender.com/leads');
       console.log('response: ', response);
       setLeads(response.data);
     } catch (error) {
@@ -29,7 +29,7 @@ export default function Home() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post('http://localhost:5000/leads', data);
+      await axios.post('https://lead-generation-l6xs.onrender.com/leads', data);
       fetchLeads();
       reset();
       setIsModalOpen(false);
